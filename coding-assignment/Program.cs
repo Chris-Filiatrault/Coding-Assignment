@@ -3,7 +3,7 @@ using System.Linq;
 using System.Globalization;
 using System.Xml;
 
-namespace veritec_coding_assignment
+namespace coding_assignment
 {
     class Program
     {
