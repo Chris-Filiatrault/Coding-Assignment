@@ -1,0 +1,53 @@
+﻿@page
+@model TaxCalculatorUI.Pages.ResultsModel
+@{
+}
+
+<h1>Results</h1>
+
+<table style="width:15%">
+    <tr>
+        <td>Total Package</td>
+        <td>@Model.TotalPackage</td>
+    </tr>
+    <tr>
+        <td>Pay Frequency</td>
+        <td>@Model.PayFrequency</td>
+    </tr>
+    <tr>
+        <td>Superannuation</td>
+        <td>@Model.Superannuation</td>
+    </tr>
+    <tr>
+        <td>Taxable Income</td>
+        <td>@Model.TaxableIncome</td>
+    </tr>
+    <tr>
+        <td>Deduction Taxable Income</td>
+        <td>@Model.DeductionTaxableIncome</td>
+    </tr>
+    <tr>
+        <td>Medicare Levy</td>
+        <td>@Model.MedicareLevy</td>
+    </tr>
+    <tr>
+        <td>Budget Repair Levy</td>
+        <td>@Model.BudgetRepairLevy</td>
+    </tr>    
+    <tr>
+        <td>Income Tax</td>
+        <td>@Model.IncomeTax</td>
+    </tr>    
+    <tr>
+        <td>Deductions</td>
+        <td>@Model.Deductions</td>
+    </tr>    
+    <tr>
+        <td>Net Income</td>
+        <td>@Model.NetIncome</td>
+    </tr>    
+    <tr>
+        <td>Pay Packet</td>
+        <td>@Model.PayPacket</td>
+    </tr>
+</table>

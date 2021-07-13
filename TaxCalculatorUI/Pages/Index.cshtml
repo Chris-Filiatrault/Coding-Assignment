@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Tax Calculator";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Tax Calculator</h1>
+</div>
+
+
+<form method="post">
+
+    <h5>Enter Total Package</h5>
+    <input type="text" asp-for="ValuesObject.TotalPackage"/>
+
+    <h5>Enter Pay Frequency</h5>
+    <input type="text" asp-for="ValuesObject.PayFrequency"/>
+    
+    <br />
+    <br />
+
+    <button type="submit">Calculate</button>
+</form>

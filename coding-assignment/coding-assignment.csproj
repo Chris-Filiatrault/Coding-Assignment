@@ -6,4 +6,8 @@
         <RootNamespace>coding_assignment</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Models\" />
+    </ItemGroup>
+
 </Project>

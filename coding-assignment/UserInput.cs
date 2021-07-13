@@ -38,7 +38,7 @@ namespace coding_assignment
 
         public static int GetPayFrequency()
         {
-            int payFrequency = 12; // default to monthly. Can't use 0 due to dividing by payFrequency in Calculations.cs
+            int payFrequency = 12;
             bool isValid = false;
             string[] validPayFrequencies = {"w", "W", "f", "F", "m", "M"};
 
@@ -73,6 +73,40 @@ namespace coding_assignment
             }
             return payFrequency;
         }
-        
+
+        public static int GetPayFrequencyFromWebform(string userInput)
+        {
+            int payFrequency = 12;
+            bool isValid = false;
+            string[] validPayFrequencies = { "w", "W", "f", "F", "m", "M" };
+            while (!isValid)
+            {
+                if (validPayFrequencies.Contains(userInput))
+                {
+                    string payFrequencyUpper = userInput.ToUpper();
+                    if (payFrequencyUpper == "W")
+                    {
+                        payFrequency = 52;
+                        isValid = true;
+                    }
+                    else if (payFrequencyUpper == "F")
+                    {
+                        payFrequency = 26;
+                        isValid = true;
+                    }
+                    else
+                    {
+                        payFrequency = 12;
+                        isValid = true;
+                    }
+                }
+                else
+                {
+                    // error handling
+                }
+            }
+            return payFrequency;
+        }
+
     }
 }
