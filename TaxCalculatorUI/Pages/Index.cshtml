@@ -3,6 +3,9 @@
 @{
     ViewData["Title"] = "Tax Calculator";
 }
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
 
 <div class="text-center">
     <h1 class="display-4">Tax Calculator</h1>
@@ -11,12 +14,18 @@
 
 <form method="post">
 
-    <h5>Enter Total Package</h5>
-    <input type="text" asp-for="ValuesObject.TotalPackage"/>
+    <h5>Enter Total Package (inc Superannuation)</h5>
+    <input type="text" asp-for="ValuesObject.TotalPackage" />
+    <br />
+    <span asp-validation-for="ValuesObject.TotalPackage"></span>
 
-    <h5>Enter Pay Frequency</h5>
-    <input type="text" asp-for="ValuesObject.PayFrequency"/>
-    
+    <br />
+    <br />
+    <h5>Enter Pay Frequency (w, f, m)</h5>
+    <input type="text" asp-for="ValuesObject.PayFrequency" />
+    <br />
+    <span asp-validation-for="ValuesObject.PayFrequency"></span>
+
     <br />
     <br />
 

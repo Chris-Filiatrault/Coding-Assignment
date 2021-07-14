@@ -9,7 +9,6 @@ using TaxCalculatorUI.Models;
 
 
 
-
 namespace TaxCalculatorUI.Pages
 {
     public class IndexModel : PageModel
@@ -36,7 +35,7 @@ namespace TaxCalculatorUI.Pages
 
                 // Perform calculations
                 double TotalPackage = ValuesObject.TotalPackage;
-                int PayFrequency = UserInput.GetPayFrequencyFromWebform(ValuesObject.PayFrequency);
+                int PayFrequency = Utilities.PayFrequencyCharToInt(ValuesObject.PayFrequency);
                 double Superannuation = Calculations.CalculateSuperannuation(TotalPackage);
                 double TaxableIncome = Calculations.CalculateTaxableIncome(TotalPackage, Superannuation);
                 double DeductionTaxableIncome = Math.Floor(TaxableIncome);

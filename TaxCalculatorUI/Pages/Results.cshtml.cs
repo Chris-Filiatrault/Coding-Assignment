@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace TaxCalculatorUI.Pages
 {
     public class ResultsModel : PageModel
     {
+
 
         [BindProperty(SupportsGet = true)]
         public double TotalPackage { get; set; }

@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.Web;
 
 namespace TaxCalculatorUI.Models
 {
     public class Values
     {
+        [Required]
         public double TotalPackage { get; set; }
-        public string PayFrequency { get; set; }
-        public int PayFrequencyInt { get; set; }
+
+        [Required]
+        public char PayFrequency { get; set; }
 
         public double Superannuation { get; set; }
         public double TaxableIncome { get; set; }
