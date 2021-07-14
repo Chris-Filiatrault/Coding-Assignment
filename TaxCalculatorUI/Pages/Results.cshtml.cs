@@ -12,7 +12,6 @@ namespace TaxCalculatorUI.Pages
     public class ResultsModel : PageModel
     {
 
-
         [BindProperty(SupportsGet = true)]
         public double TotalPackage { get; set; }
 
@@ -48,18 +47,6 @@ namespace TaxCalculatorUI.Pages
 
         public void OnGet()
         {
-            //var results = new
-            //{
-            //    Superannuation = Calculations.CalculateSuperannuation(TotalPackage),
-            //    TaxableIncome = Calculations.CalculateTaxableIncome(TotalPackage, Superannuation),
-            //    DeductionTaxableIncome = Math.Floor(TaxableIncome),
-            //    MedicareLevy = Calculations.CalculateMedicareLevy(DeductionTaxableIncome),
-            //    BudgetRepairLevy = Calculations.CalculateBudgetRepairLevy(DeductionTaxableIncome),
-            //    IncomeTax = Calculations.CalculateIncomeTax(DeductionTaxableIncome),
-            //    Deductions = MedicareLevy + BudgetRepairLevy + IncomeTax,
-            //    NetIncome = TotalPackage - Superannuation - Deductions,
-            //    PayPacket = Utilities.RoundUp(NetIncome / PayFrequency, 2)
-            //};
         }
     }
 }

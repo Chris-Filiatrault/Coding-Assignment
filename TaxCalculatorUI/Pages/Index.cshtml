@@ -14,17 +14,17 @@
 
 <form method="post">
 
+    <br />
     <h5>Enter Total Package (inc Superannuation)</h5>
     <input type="text" asp-for="ValuesObject.TotalPackage" />
     <br />
-    <span asp-validation-for="ValuesObject.TotalPackage"></span>
+    <span style="color:red" asp-validation-for="ValuesObject.TotalPackage"></span>
 
-    <br />
     <br />
     <h5>Enter Pay Frequency (w, f, m)</h5>
     <input type="text" asp-for="ValuesObject.PayFrequency" />
     <br />
-    <span asp-validation-for="ValuesObject.PayFrequency"></span>
+    <span style="color:red" asp-validation-for="ValuesObject.PayFrequency"></span>
 
     <br />
     <br />

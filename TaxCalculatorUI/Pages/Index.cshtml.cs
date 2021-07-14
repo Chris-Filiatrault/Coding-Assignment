@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using TaxCalculatorUI.Models;
 
 
-
 namespace TaxCalculatorUI.Pages
 {
     public class IndexModel : PageModel
