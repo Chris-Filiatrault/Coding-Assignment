@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TaxCalculatorUI.Models;
-using coding_assignment;
 
 
 
@@ -64,7 +63,7 @@ namespace TaxCalculatorUI.Pages
                     PayPacket = PayPacket
                 };
 
-                // Redirect to results page
+                // Redirect to results page and pass in values in anonymous object 
                 return RedirectToPage("/Results", results);
             }
         }

@@ -1,6 +1,6 @@
 using System;
-using coding_assignment;
 using Xunit;
+using TaxCalculatorUI;
 
 namespace UnitTests
 {
