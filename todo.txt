@@ -1,9 +1,9 @@
 Tax Calculator todo
 
-- input validation
-- styling
-- format results as currency
 - readme.md
+- drop down for payfrequency
+- format results as currency
+- styling
 - review comments for accuracy
 - info on landing page about what it does
 

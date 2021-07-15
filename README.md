@@ -1,32 +1,9 @@
-## Console App Enhancements
+## TaxCalculatorUI
 
-After work on the [Master](https://github.com/Chris-Filiatrault/veritec-coding-assignment) branch was submitted, I received feedback as to how I could improve the solution.
+This branch further extends the work done on [ConsoleAppEnhancements](https://github.com/Chris-Filiatrault/coding-assignment/tree/ConsoleAppEnhancements) by adding a Razor Pages UI by:
 
-This branch contains additional commits with the implementation of these suggestions.
-
-**Suggestions included:**
-  
--[x] Don't use a try/catch block for predictable user-input errors <br>
-  
--[x] Reduce comments
-  
--[ ] Create unit tests
-
--[x] Split code into classes
-    - improves extensibility
-    - improves readability
-    - easier to unit test
-    
-**My own additions:** 
--[x] Add documentation
-
--[x] Handle $ symbol in user input if present
-  
-
-**More work is required with regards to:**
-
--[ ] Accessibility of properties/methods
-    - Only make methods/properties public when needed
-    - Use constants if not mutating the value
-    - More elegantly handle default value for payFrequency in UserInput.cs (defaults to 12)
-    - Generalise methods in UserInput so they aren't console application specific
+- Creating a new Razor Pages project
+- Creating a Values class in the models folder to capture
+- Building the pages and input form
+- Bringing files from the original project
+- Refactoring/removing console app specific code

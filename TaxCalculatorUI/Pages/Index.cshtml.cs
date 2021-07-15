@@ -31,38 +31,19 @@ namespace TaxCalculatorUI.Pages
             }
             else
             {
-
                 // Perform calculations
-                double TotalPackage = ValuesObject.TotalPackage;
-                int PayFrequency = Utilities.PayFrequencyCharToInt(ValuesObject.PayFrequency);
-                double Superannuation = Calculations.CalculateSuperannuation(TotalPackage);
-                double TaxableIncome = Calculations.CalculateTaxableIncome(TotalPackage, Superannuation);
-                double DeductionTaxableIncome = Math.Floor(TaxableIncome);
-                double MedicareLevy = Calculations.CalculateMedicareLevy(DeductionTaxableIncome);
-                double BudgetRepairLevy = Calculations.CalculateBudgetRepairLevy(DeductionTaxableIncome);
-                double IncomeTax = Calculations.CalculateIncomeTax(DeductionTaxableIncome);
-                double Deductions = MedicareLevy + BudgetRepairLevy + IncomeTax;
-                double NetIncome = TotalPackage - Superannuation - Deductions;
-                double PayPacket = Utilities.RoundUp(NetIncome / PayFrequency, 2);
-
-                // Create anonymous object to pass values to Results view model
-                var results = new
-                {
-                    TotalPackage = TotalPackage,
-                    PayFrequency = PayFrequency,
-                    Superannuation = Superannuation,
-                    TaxableIncome = TaxableIncome,
-                    DeductionTaxableIncome = DeductionTaxableIncome,
-                    MedicareLevy = MedicareLevy,
-                    BudgetRepairLevy = BudgetRepairLevy,
-                    IncomeTax = IncomeTax,
-                    Deductions = Deductions,
-                    NetIncome = NetIncome,
-                    PayPacket = PayPacket
-                };
+                ValuesObject.Superannuation = Calculations.CalculateSuperannuation(ValuesObject.TotalPackage);
+                ValuesObject.TaxableIncome = Calculations.CalculateTaxableIncome(ValuesObject.TotalPackage, ValuesObject.Superannuation);
+                ValuesObject.DeductionTaxableIncome = Math.Floor(ValuesObject.TaxableIncome);
+                ValuesObject.MedicareLevy = Calculations.CalculateMedicareLevy(ValuesObject.DeductionTaxableIncome);
+                ValuesObject.BudgetRepairLevy = Calculations.CalculateBudgetRepairLevy(ValuesObject.DeductionTaxableIncome);
+                ValuesObject.IncomeTax = Calculations.CalculateIncomeTax(ValuesObject.DeductionTaxableIncome);
+                ValuesObject.Deductions = ValuesObject.MedicareLevy + ValuesObject.BudgetRepairLevy + ValuesObject.IncomeTax;
+                ValuesObject.NetIncome = ValuesObject.TotalPackage - ValuesObject.Superannuation - ValuesObject.Deductions;
+                ValuesObject.PayPacket = Utilities.RoundUp(ValuesObject.NetIncome / ValuesObject.PayFrequency, 2);
 
                 // Redirect to results page and pass in values in anonymous object 
-                return RedirectToPage("/Results", results);
+                return RedirectToPage("/Results", ValuesObject);
             }
         }
     }
