@@ -1,11 +1,11 @@
 Tax Calculator todo
 
-- readme.md
-- drop down for payfrequency
 - format results as currency
-- styling
+- drop down for payfrequency
 - review comments for accuracy
 - info on landing page about what it does
 
 
 Create API as separate Web App
+
+
