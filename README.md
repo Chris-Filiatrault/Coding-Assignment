@@ -1,6 +1,6 @@
-# coding-assignment
+# Tax Calculator
 
-## The task:
+## The task (as part of a coding assignment):
 Create a C# Windows console application that allows a user to enter a gross salary package and a pay frequency and then show them a breakdown of this salary and what their pay packet will be. <br><br>
 **Note:** <br>
 The solution provides a multiplatform console application by using .NET Core, rather than Windows specific console application.
