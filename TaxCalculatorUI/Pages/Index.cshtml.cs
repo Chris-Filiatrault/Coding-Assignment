@@ -16,6 +16,8 @@ namespace TaxCalculatorUI.Pages
         [BindProperty]
         public Values ValuesObject { get; set; }
 
+        public Results ResultsObject { get; set; }
+
         public void OnGet()
         {
         }
@@ -24,13 +26,14 @@ namespace TaxCalculatorUI.Pages
         public IActionResult OnPost()
         {
             // if there's an issue with the values returned (required fields not filled out etc)
-            // requires logic for validation
+            // TODO - add logic for validation
             if (!ModelState.IsValid)
             {
                 return Page();
             }
             else
             {
+
                 // Perform calculations
                 ValuesObject.Superannuation = Calculations.CalculateSuperannuation(ValuesObject.TotalPackage);
                 ValuesObject.TaxableIncome = Calculations.CalculateTaxableIncome(ValuesObject.TotalPackage, ValuesObject.Superannuation);
@@ -42,8 +45,23 @@ namespace TaxCalculatorUI.Pages
                 ValuesObject.NetIncome = ValuesObject.TotalPackage - ValuesObject.Superannuation - ValuesObject.Deductions;
                 ValuesObject.PayPacket = Utilities.RoundUp(ValuesObject.NetIncome / ValuesObject.PayFrequency, 2);
 
+
+                var results = new
+                {
+                    TotalPackage = Utilities.ConvertToCurrency(ValuesObject.TotalPackage),
+                    Superannuation = Utilities.ConvertToCurrency(ValuesObject.Superannuation),
+                    TaxableIncome = Utilities.ConvertToCurrency(ValuesObject.TaxableIncome),
+                    DeductionTaxableIncome = Utilities.ConvertToCurrency(ValuesObject.DeductionTaxableIncome),
+                    MedicareLevy = Utilities.ConvertToCurrency(ValuesObject.MedicareLevy),
+                    BudgetRepairLevy = Utilities.ConvertToCurrency(ValuesObject.BudgetRepairLevy),
+                    IncomeTax = Utilities.ConvertToCurrency(ValuesObject.IncomeTax),
+                    Deductions = Utilities.ConvertToCurrency(ValuesObject.Deductions),
+                    NetIncome = Utilities.ConvertToCurrency(ValuesObject.NetIncome),
+                    PayPacket = Utilities.ConvertToCurrency(ValuesObject.PayPacket)
+            };
+
                 // Redirect to results page and pass in values in anonymous object 
-                return RedirectToPage("/Results", ValuesObject);
+                return RedirectToPage("/Results", results);
             }
         }
     }

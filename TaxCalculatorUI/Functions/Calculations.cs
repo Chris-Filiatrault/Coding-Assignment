@@ -7,7 +7,7 @@ namespace TaxCalculatorUI
     /// </summary>
     public class Calculations
     {
-        
+
         public static double CalculateSuperannuation(double totalPackage)
         {
             return Utilities.RoundUp((totalPackage - totalPackage / 1.095), 2);
@@ -33,7 +33,7 @@ namespace TaxCalculatorUI
                 return Math.Ceiling(deductionTaxableIncome * 0.02);
             }
         }
-        
+
         public static double CalculateBudgetRepairLevy(double deductionTaxableIncome, int tier1 = 180000)
         {
             if (deductionTaxableIncome <= tier1)

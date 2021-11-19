@@ -3,9 +3,28 @@ Tax Calculator todo
 - format results as currency
 - drop down for payfrequency
 - review comments for accuracy
-- info on landing page about what it does
+- info on landing page about what it does (tax rules based on what year? what rates?) & link to source code
 
 
 Create API as separate Web App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

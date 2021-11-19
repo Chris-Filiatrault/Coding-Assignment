@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Globalization;
 
 namespace TaxCalculatorUI
 {
@@ -8,14 +9,12 @@ namespace TaxCalculatorUI
     /// </summary>
     public class Utilities
     {
-        /// Used to round a double to two decimal places in Calculations
         public static double RoundUp(double input, int places)
         {
             double multiplier = Math.Pow(10, Convert.ToDouble(places));
             return Math.Ceiling(input * multiplier) / multiplier;
         }        
         
-        /// Used to remove the dollar symbol from the first character of the user input string if present
         public static string RemoveDollarSymbol(string input)
         {
             if (input != "")
@@ -56,10 +55,15 @@ namespace TaxCalculatorUI
                 }
                 else
                 {
-                    // error handling
+                    // TODO - error handling
                 }
             }
             return payFrequency;
+        }
+
+        public static string ConvertToCurrency(double amount)
+        {
+            return amount.ToString("C", CultureInfo.CurrentCulture);
         }
 
     }
