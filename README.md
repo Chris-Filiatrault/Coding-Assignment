@@ -10,7 +10,7 @@ This branch contains additional commits with the implementation of these suggest
   
 -[x] Reduce comments
   
--[ ] Create unit tests
+-[x] Create unit tests
 
 -[x] Split code into classes
     - improves extensibility
@@ -21,12 +21,18 @@ This branch contains additional commits with the implementation of these suggest
 -[x] Add documentation
 
 -[x] Handle $ symbol in user input if present
+
+-[ ] Convert to currency
   
 
 **More work is required with regards to:**
 
 -[ ] Accessibility of properties/methods
+
     - Only make methods/properties public when needed
+    
     - Use constants if not mutating the value
+    
     - More elegantly handle default value for payFrequency in UserInput.cs (defaults to 12)
+    
     - Generalise methods in UserInput so they aren't console application specific
