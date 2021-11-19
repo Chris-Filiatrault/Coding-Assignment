@@ -27,7 +27,7 @@ This branch contains additional commits with the implementation of these suggest
   
 
 **More work is required with regards to:**
-- Accessibility of properties/methods
+- Access Modifiers
 - Only make methods/properties public when needed
 - Use constants if not mutating the value 
 - More elegantly handle default value for payFrequency in UserInput.cs (defaults to 12)
