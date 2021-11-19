@@ -18,6 +18,7 @@ This branch contains additional commits with the implementation of these suggest
     - easier to unit test
     
 **My own additions:** 
+
 -[x] Add documentation
 
 -[x] Handle $ symbol in user input if present
